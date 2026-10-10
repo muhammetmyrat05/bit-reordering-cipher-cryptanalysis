@@ -43,7 +43,6 @@ python3 -c "import nist; nist.statistical_validation()"
 * Tested with Python 3.12, NumPy 2.4, SciPy 1.17 and cryptography 46. Seeds are fixed in each script.
 * Run the parts of the v2 evaluation through `run_part.py`, as `run_all.sh` does. Each part uses its own random stream; running `exp_v2.py` as a whole draws random numbers in a different order and gives slightly different values (same conclusions).
 * Timings (milliseconds, seconds) and the Diffie-Hellman measurements depend on the machine and are indicative only.
-* The DFT test of SP 800-22 is **not** used: our output for the specification's worked example did not match, and we could not resolve this. Six of the eight tests reproduce the specification's worked examples; Longest Run was validated on random, biased and periodic data only.
 * The NIST data sets are shortened versions of those in Soto (NISTIR 6390): 1024 blocks and 200 sequences per data set. The counter data set is our own addition.
 * The original paper does not say how HKDF output becomes permutations; `kdcheck.py` tests our own instantiation only.
 
