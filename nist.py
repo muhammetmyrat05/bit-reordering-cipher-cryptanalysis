@@ -12,9 +12,6 @@ from scipy.stats import norm
 
 TEST_NAMES = ["Frequency", "BlockFrequency", "Runs", "LongestRun",
               "CumulativeSums", "ApproxEntropy", "Serial1", "Serial2"]
-# NOTE: dft() below is kept for reference but is NOT part of run_all(): its
-# output for the worked example of SP 800-22 did not match the specification
-# and we could not resolve the discrepancy.
 
 
 def frequency(bits):
@@ -122,17 +119,6 @@ def serial(bits, m=3):
     p2 = psi(m) - 2 * psi(m - 1) + psi(m - 2)
     return (float(gammaincc(2 ** (m - 2), p1 / 2.0)),
             float(gammaincc(2 ** (m - 3), p2 / 2.0)))
-
-
-def dft(bits):
-    n = len(bits)
-    x = 2.0 * bits - 1
-    mag = np.abs(np.fft.fft(x))[:n // 2]
-    T = math.sqrt(math.log(1 / 0.05) * n)
-    N0 = 0.95 * n / 2
-    N1 = float(np.sum(mag < T))
-    d = (N1 - N0) / math.sqrt(n * 0.95 * 0.05 / 4)
-    return float(erfc(abs(d) / math.sqrt(2)))
 
 
 def run_all(bits, apen_m=2, serial_m=3):
