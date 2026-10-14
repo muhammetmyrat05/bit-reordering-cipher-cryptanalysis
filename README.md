@@ -3,7 +3,7 @@
 Code and data accompanying the paper *"Cryptanalysis of a Hybrid Bit-Reordering and Permutation-Based
 Cipher: A Red-Team Evaluation of Our Own Construction"* (submitted to CSAI 2026).
 
-**Authors:** Muhammetmyrat Annamammedov, Yslam Orazov, Ayjemal Ussayeva, Ayjemal Abdyrahymova, Ayjeren Sahetlyyeva
+**Authors:** Muhammetmyrat Annamammedov, Yslam Orazov, Ayjemal Ussayeva, Ayjemal Abdyrahymova, Ayjeren Sahetliyeva
 Department of Cyberphysical Systems, Oguz han Engineering and Technology University of Turkmenistan.
 
 The paper attacks a lightweight cipher we proposed earlier (called **v1** here), and then tests a
